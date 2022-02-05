@@ -1,0 +1,14 @@
+useradd and remove commands:-
+----------------------------
+1)add user:-
+cmd:-useradd username
+2)remove user permanently:-
+cmd:-userdel -r -f username
+
+switch or connect one user to another user:-
+---------------------------------------------
+cmd:-passwd --delete username         [username=where you are logged in the current user.]
+(OR)
+create new password for specific user:-
+-------------------------------------
+cmd:-passwd   [it will ask for new password(create new password as well.)]

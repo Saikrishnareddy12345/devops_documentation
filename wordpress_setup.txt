@@ -1,0 +1,38 @@
+1)yum update -y
+2)sudo amazon-linux-extras enable php7.4
+3)yum clean metadata
+4)yum install php-cli php-pdo php-fpm php-json php-mysqlnd
+5)sudo amazon-linux-extras enable php7.4
+6)yum install httpd mod_ssl -y
+7)yum install php php-cli php-musqlnd php-pdo php-common -y
+8)systemctl status httpd
+9)wget https://wordpress.org/latest.tar.gz
+10)tar -xzf latest.tar.gz
+11)cp wordpress/wp-config-sample.php wordpress/wp-config.php
+12)nano wordpress/wp-config.php
+13)cp -r wordpress/* /var/www/html/
+14)mkdir /var/www/html/blog
+15)cp -r wordpress/* /var/www/html/blog/
+16)sudo vim /etc/httpd/conf/httpd.conf
+17)sudo yum install php-gd
+18)sudo yum list installed | grep php-gd
+19)yum list | grep php-gd
+20)sudo yum install php72-gd
+21)sudo yum install php-gd
+22)sudo chown -R apache /var/www
+23)sudo chgrp -R apache /var/www
+24)sudo chmod 2775 /var/www
+25)find /var/www -type d -exec sudo chmod 2775 {} \;
+26)find /var/www -type f -exec sudo chmod 0664 {} \;
+27)sudo systemctl restart httpd
+28)sudo service httpd restart
+29)sudo systemctl enable httpd
+30)sudo systemctl status httpd
+31)sudo chkconfig httpd on && sudo chkconfig mysqld on
+32)sudo service mysqld status
+33)sudo service mysqld start
+34)curl localhost | grep wp-content
+35)curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+36)php wp-cli.phar search-replace 'old_site_url' 'new_site_url' --path=/path/to/wordpress/installation --skip-columns=guid
+37)cd /var/www/html/
+38)'your alb endpoint'/blog/admin--->for login page

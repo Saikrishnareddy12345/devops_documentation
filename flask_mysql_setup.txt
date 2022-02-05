@@ -1,0 +1,11 @@
+Commands for flask_setup:-
+for ububtu:-
+->apt install python3-pip
+->pip install mysqlclient
+->sudo apt-get install python3-dev libmysqlclient-dev
+->pip install configparser
+->###sudo cp /usr/lib/python3.8/configparser.py /usr/lib/python3.8/ConfigParser.py
+->mysql_config = /usr/local/mysql/bin/mysql_config
+->export PATH=$PATH:/usr/local/mysql/bin/
+->pip install flask
+->pip install flask-mysqldb
