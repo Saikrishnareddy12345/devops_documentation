@@ -1,0 +1,22 @@
+Method-1:-downloading the package into remote server and unziped here and copy into the apache.
+===================================================
+ssh root@172.31.34.84 'rm -rf /var/www/html/*'
+aws s3 cp s3://saikrish/wordpress/wordpress-$pkg.zip .
+ssh root@172.31.34.84 'mkdir /tmp/wd'
+ssh root@172.31.34.84 'aws s3 cp s3://saikrish/wordpress/wordpress-14.zip /tmp/wd/'
+ssh root@172.31.34.84 'cd /tmp/wd/; unzip -o wordpress-14.zip'
+scp -r * root@172.31.34.84:/tmp/wd/
+ssh root@172.31.34.84 'cp -r /tmp/wd/* /var/www/html/'
+ssh root@172.31.34.84 'rm -rf /tmp/wd'
+rm -rf *
+
+Method-2:-downloading the package in workspace and unziped here and copy to the remote server apache.
+========================================
+ssh root@172.31.34.84 'rm -rf /var/www/html/*'
+aws s3 cp s3://saikrish/wordpress/wordpress-$pkg.zip .
+unzip -o wordpress-$pkg.zip
+rm -rf wordpress-$pkg
+ssh root@172.31.34.84 'mkdir /tmp/wd'
+scp -r * root@172.31.34.84:/var/www/html/
+#ssh root@172.31.34.84 'cp -r /tmp/wd/wordpress-14/* /var/www/html/'
+ssh root@172.31.34.84 'rm -f /tmp/wd'

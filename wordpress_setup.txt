@@ -28,7 +28,7 @@
 28)sudo service httpd restart
 29)sudo systemctl enable httpd
 30)sudo systemctl status httpd
-31)sudo chkconfig httpd on && sudo chkconfig mysqld on
+31)sudo chkconfig httpd on
 32)sudo service mysqld status
 33)sudo service mysqld start
 34)curl localhost | grep wp-content
