@@ -1,0 +1,34 @@
+location of file is:-
+----------------------
+/etc/logstash/config.d/sample.conf
+
+input {
+  file {
+    path => "/var/log/httpd/access_log"
+    type => "syslog"
+  }
+
+  file {
+    path => "/var/log/httpd/error_log"
+    type => "syslog"
+  }
+}
+
+filter {
+  if [type] == "apache-access" {
+    grok {
+      match => [ "message", "%{COMBINEDAPACHELOG}" ]
+    }
+  }
+}
+
+output {
+   elasticsearch {
+       hosts => ["172.31.12.222:9200"]
+       user => "elastic"
+       password => "elastic123"
+       index => "apachelog-1"
+       manage_template => false
+   }
+}
+

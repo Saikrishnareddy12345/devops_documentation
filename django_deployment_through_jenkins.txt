@@ -1,0 +1,30 @@
+install packages for django project from jenkins:-
+==================================================
+ssh root@172.31.38.26 'apt-get install python3-pip -y'
+ssh root@172.31.38.26 'sudo apt-get install python3-dev default-libmysqlclient-dev build-essential -y'
+ssh root@172.31.38.26 'pip install mysqlclient'
+ssh root@172.31.38.26 'pip install django'
+ssh root@172.31.38.26 'pip install django-widget_tweaks'
+
+store the package to artifactory:-
+======================================
+sudo rm -rf mysql_django/settings.py
+cp /opt/configfile/settings.py mysql_django/
+zip -r django_project-$BUILD_NUMBER.zip *
+aws s3 cp django_project-$BUILD_NUMBER.zip s3://saikrish/django/
+rm -rf *
+deploy code from artifactory to django instance:-
+================================================
+#rm -rf *
+aws s3 cp s3://saikrish/django/django_project-$CHOICE.zip .
+unzip django_project-$CHOICE.zip
+rm -rf django_project-$CHOICE.zip
+scp -r * root@172.31.38.26:/opt/
+
+#ssh root@172.31.38.26 'cd /opt/; unzip -o django_project-9.zip'
+ssh root@172.31.38.26 'rm -rf /opt/*.zip'
+#ssh root@172.31.38.26 'cd django_project'
+ssh root@172.31.38.26 'cd /opt/; python3 manage.py migrate'
+ssh root@172.31.38.26 'cd /opt/; python3 manage.py runserver 0.0.0.0:3000 &'
+rm -rf *
+

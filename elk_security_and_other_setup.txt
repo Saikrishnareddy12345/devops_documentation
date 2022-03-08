@@ -1,0 +1,28 @@
+create authentication to kibana,elasticsearch and logstash:-
+================================================================
+cd /usr/share/elasticsearch/bin/
+./elasticsearch-setup-passwords interactive
+ll
+#cat elasticsearch-setup-passwords
+-------------------------------------------------------
+Changed password for user [apm_system]
+Changed password for user [kibana_system]
+Changed password for user [kibana]
+Changed password for user [logstash_system]
+Changed password for user [beats_system]
+Changed password for user [remote_monitoring_user]
+Changed password for user [elastic]
+
+
+===================================>>>>>>>>>>>
+you can write after end of the elastic.yml file.when if you have any error:-
+------------------------------------------------------------------------------
+xpack.security.enabled: true
+xpack.security.authc.api_key.enabled: true
+xpack:
+  security:
+    authc:
+      realms:
+        native:
+          native1:
+            order: 0
