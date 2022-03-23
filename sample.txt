@@ -1,0 +1,321 @@
+- Having 2+ years of experience which includes DevOps automation with various tools like Git, Maven, Jenkins and AWS services.
+- hands on experience in amazon ec2 cloud deployments using devops tool like jenkins.
+- having good knowledge and experience in Terraform(IAC) to creating infra in AWS cloud.
+- Have experience on taking backups of EBS volumes using Amazon EBS snapshots.
+- extensively worked on build tool like maven to make package,worked on jenkins is used for automation deployment and Github(SCM) is used for bring the code.
+- Have good knowledge in EAR, JAR, WAR projects.
+- Created and mounted the Files systems(add volumes) on AWS linux Instance.
+- Good Hands on experience with Unix/Linux. 
+- Experience in ticketing tool jira.
+- Having knowledge on upgrading the existing Instances.
+- have good knowledge how to solve bugs in servers maanually.
+- Worked on AWS services like EC2, VPC, S3, IAM, RDS, AUTO SCALING, ROUTE53, ECS, cloud watch, cloud trail, LAMBDA. 
+- having experience in s3 web hosting and also experienced in replication of s3 bucket.
+- having good knowledge in lambda function how to stop and start ec2 instances.
+- experienced in vpc service and created own vpc.
+- having good knowledge in auto scaling and also experienced in static and dynamic auto scaling.
+- Setting up the Jenkins with Day and Nightly builds on different branching strategies and monitor the build processes
+- Involved in Jenkins upgrade process and Jenkins Backup and Restore.
+- Having experience in working on Jenkins for continuous integration and for End to End automation for all Build and Deployments.
+- Experienced in setting up the Jenkins jobs for continuous integration and continuous delivery.
+- Involved in checking the server status and server performance. 
+- Having Good Knowledge in sonarqube for code Quality.
+- Good experience in SHELL.
+- Interacting with development and QA teams to fix the defects and build failures.
+- Troubleshoot the build issue during the Jenkins build process.
+- Having good knowledge on writing AWS CLI Scripts to store the artifacts into the S3 bucket.
+- Build and maintain SQL scripts and execute different scripts for different environments.
+- Hands on experience with monitoring tools like Prometheus and Grafana.
+- Hands on experience with logging tools like cloud watch, ELK.
+- having experience to setup ELK and log Agents.
+- Worked in different application environment like Prod, Pre-Prod, Testing. 
+- Working in 24X7 environments to support the servers
+- Connecting to the remote servers using GUI Tools and using Linux SSH command and copying the files to remote servers. 
+- Having good knowledge and experience with Python script. Especially good idea about Boto3 module which is used to interact with the AWS services.
+- Good Experience in python to get all volumes data and Ec2's data generating into the excel sheet and send to the email .In this scenario we are using the AWS Lambda Function.
+- Good knowledge on python oops concept and know about the lists, dictionaries and tuple in python.
+- Having knowledge about for loop as well as while loops in python.
+- Hands on experience to get all instances(info) details using Python and also getting aws services like ec2 instance,S3 Buckets ,IAM users etc.
+
+   
+
+kubectl get nodes
+   91  kubectl get po 
+   92  kubectl get pod
+   93  kubectl get ns
+   94  kubectl get po 
+   95  kubectl get po -n kube-system
+   96  kubectl get nodes
+   97  kubectl get po -n kube-system
+   98  kubectl get ns
+   99  kubectl create ns frontend
+  100  kubectl get ns
+  101  kubectl create ns backend
+  102  kubectl  create  ns testing
+  103  kubectl get po -n frontned
+  104  mkdir eks-demos
+  105  cd eks-demos/
+  106  vi first-deployment.yaml
+  107  kubectl apply -f first-deployment.yaml
+  108  kubectl  get po 
+  109  kubectl get deployment
+  110  kubectl get po
+  111  kubectl delete po ecsdemo-nodejs-99fbbf9-gvxt6
+  112  kubectl get replicaset
+113  kubectl get po
+  114  ls -ltr
+  115  kubectl  get deployment
+  116  kubectl  scale deploy ecsdemo-nodejs --replicas=10000
+  117  kubectl get po 
+  118  kubectl  get deployment
+  119  kubectl get po  
+  120  kubectl describe po ecsdemo-nodejs-99fbbf9-zzwlw
+  121  vi first-deployment.yaml 
+  122  kubectl apply -f  first-deployment.yaml 
+  123  kubectl get deploy
+  124  kubectl get po 
+  125  kubectl get deploy
+  126  kubectl get po 
+  127  kubectl get po | wc -l 
+  128  kubectl delete -f first-deployment.yaml 
+  129  kubectl get po 
+  130  kubectl get deploy
+  131  kubectl get po 
+  132  kubectl get po | grep -i running
+  133  kubectl get po | grep -i running | wc -l
+  134  kubectl get po | grep -i pending
+135  kubectl get po | grep -i pending | wc -l
+  136  kubectl get nodes
+  137  kubectl describe node ip-192-168-15-117.ap-south-1.compute.internal 
+  138  kubectl get po  
+  139  ls -ltrh
+  140  kubectl apply -f first-deployment.yaml 
+  141  kubectl get deploy  
+  142  kubectl get rs
+  143  kubectl get po  
+  144  kubectl describe po ecsdemo-nodejs-99fbbf9-ft8np
+  145  kubectl describe node ip-192-168-57-61.ap-south-1.compute.internal
+  146  kubectl get po  
+  147  kubectl exec -it ecsdemo-nodejs-99fbbf9-ft8np sh
+  148  kubectl  get po 
+  149  kubectl logs -f ecsdemo-nodejs-99fbbf9-ft8np 
+  150  ls -ltrh
+  151  vi first-svc.yaml
+  152  kubectl get svc
+  153  cat first-svc.yaml 
+  154  kubectl apply -f first-svc.yaml 
+  155  kubectl get svc
+  156  ls -ltrh
+  157  cat first-svc.yaml 
+  158  kubectl get svc
+159  kubectl delete -f first-svc.yaml 
+  160  kubectl get svc
+  161  \
+  162  kubectl  get deploy
+  163  kubectl get po 
+  164  kubectl  delete po ecsdemo-nodejs-99fbbf9-ft8np
+  165  kubectl delete deploy  ecsdemo-nodejs
+  166  kubectl get po 
+  167  ls -ltrh
+  168  vi first-deployment.yaml 
+  169  kubectl apply -f first-deployment.yaml 
+  170  kubectl  get po 
+  171  kubectl describe po ecsdemo-nodejs-79d7cdbcdf-mvs9p
+  172  kubectl  get po 
+  173  curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.ta
+r.gz" | tar xz -C /tmp
+  174  sudo mv -v /tmp/eksctl /usr/local/bin
+  175  eksctl
+  176  eksctl version
+  177  eksctl completion bash >> ~/.bash_completion
+178  . /etc/profile.d/bash_completion.sh
+  179  . ~/.bash_completion
+  180  cat << EOF > eksworkshop.yaml
+  181  ---
+  182  apiVersion: eksctl.io/v1alpha5
+  183  kind: ClusterConfig
+  184  metadata:
+  185    name: eksworkshop-eksctl
+  186    region: ${AWS_REGION}
+  187    version: "1.19"
+  188  availabilityZones: ["${AZS[0]}", "${AZS[1]}", "${AZS[2]}"]
+  189  managedNodeGroups:
+  190  - name: nodegroup
+  191    desiredCapacity: 3
+  192    instanceType: t3.small
+  193    ssh:
+  194      enableSsm: true
+  195  cat << EOF > eksworkshop.yaml
+  196  ---
+  197  apiVersion: eksctl.io/v1alpha5
+  198  kind: ClusterConfig
+  199  metadata:
+ 200    name: eksworkshop-eksctl
+  201    region: ${AWS_REGION}
+  202    version: "1.19"
+  203  availabilityZones: ["${AZS[0]}", "${AZS[1]}", "${AZS[2]}"]
+  204  managedNodeGroups:
+  205  - name: nodegroup
+  206    desiredCapacity: 3
+  207    instanceType: t3.small
+  208    ssh:
+  209      enableSsm: true
+  210  secretsEncryption:
+  211    keyARN: ${MASTER_ARN}
+  212  EOF
+  213  ls -ltrh
+  214  eksctl create cluster -f eksworkshop.yaml
+  215  vi eksworkshop.yaml 
+  216  eksctl create cluster -f eksworkshop.yaml
+  217  cat eksworkshop.yaml 
+  218  vi eksworkshop.yaml 
+  219  cat eksworkshop.yaml 
+  220  eksctl create cluster -f eksworkshop.yaml
+  221  cat eksworkshop.yaml 
+  222  vi eksworkshop.yaml 
+  223  eksctl create cluster -f eksworkshop.yaml
+ 200    name: eksworkshop-eksctl
+  201    region: ${AWS_REGION}
+  202    version: "1.19"
+  203  availabilityZones: ["${AZS[0]}", "${AZS[1]}", "${AZS[2]}"]
+  204  managedNodeGroups:
+  205  - name: nodegroup
+  206    desiredCapacity: 3
+  207    instanceType: t3.small
+  208    ssh:
+  209      enableSsm: true
+  210  secretsEncryption:
+  211    keyARN: ${MASTER_ARN}
+  212  EOF
+  213  ls -ltrh
+  214  eksctl create cluster -f eksworkshop.yaml
+  215  vi eksworkshop.yaml 
+  216  eksctl create cluster -f eksworkshop.yaml
+  217  cat eksworkshop.yaml 
+  218  vi eksworkshop.yaml 
+  219  cat eksworkshop.yaml 
+  220  eksctl create cluster -f eksworkshop.yaml
+  221  cat eksworkshop.yaml 
+  222  vi eksworkshop.yaml 
+  223  eksctl create cluster -f eksworkshop.yaml
+224  kubectl 
+  225  curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.19.6/2021-01-05/bin/linux/amd64/kubectl
+  226  ls -ltrh
+  227  pwd
+  228  chmod 755 kubectl 
+  229  mv kubectl /usr/local/bin/
+  230  kubectl get nodes
+  231  ls -ltra
+  232  cd .kube/
+  233  ls  -ltr
+  234  more config
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

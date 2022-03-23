@@ -1,0 +1,4 @@
+- jenkins pipeline for 10 stages
+- setup eks cluster.
+- tomcat,graphana,kibana,jenkins,apache with https and with your domain.
+- course completion.

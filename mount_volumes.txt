@@ -1,0 +1,10 @@
+lsblk
+file -s /dev/xvdf
+mkdir my-volume
+mkfs -t xfs /dev/xvdf
+file -s /dev/xvdf
+cd my-volume/
+mkdir -p /apps/block-device
+mount /dev/xvdf /apps/block-device/
+lsblk
+df -h

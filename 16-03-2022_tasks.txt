@@ -1,0 +1,2 @@
+1)if i stop tomcat another tomcat should come.
+2)get all the list(ec2-details,loadbalancers,s3,route53) send ll data to xl(scraping)
