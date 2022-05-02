@@ -1,0 +1,6 @@
+1)Simple routing policy
+2)Weighted policy
+3)GeoLocation policy
+4)Latency policy
+5)Failover policy
+6)Multivalue answer policy
