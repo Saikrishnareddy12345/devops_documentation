@@ -38,3 +38,23 @@ steps:-
 10)Later click on add button which is placed in below of the blank.The User Name is autometically added onto the "GlobalRoles"
    That is placed at the top of the "Assigned Roles" Section.
 10)Finally you have to click the check boxes in "Global Roles" section what role you want to attach to that user.
+============================================================================================================================================================
+OR
+we can give the permissions to the user using "Project-based Matrix Authorization Strategy"
+we know already how to create users 
+
+to attach the specific job to the particular user:-
+===================================================
+Steps:
+------
+1) Login to the jenkins console.
+2) Go to the "Manage jenkins" section.
+3) Go to Security Block click on "Configure Global Security".
+4) Go to the Authorization section Click on "Project-based Matrix Authorization Strategy".
+5) click on "Add User" give the "job permissions=build" and give "Overall Permissions=Read". 
+6) Click on Apply and Save.
+7) After that Go to the job which you want to assign to user, and Go to Configure Section and click on "General Section",
+  click the check boxes "Enable project-based security" and inside that, click "add users",Later give the permissions like
+  "Credentials=View", "Job=Build,Read" click on Apply and Save.
+  =======================================================================================================================================
+
