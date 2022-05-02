@@ -1,0 +1,40 @@
+Create Jenkins Users and assign Roles to Users:
+=================================================
+Create Users:-
+==========
+steps:-
+-------
+1) Login to jenkins console.
+2) go to the manage Jenkins section.
+3) and go to the Security section.Later move to Manage Users section.
+	Create the Users.
+------------------------------------------------------------------------------------
+create roles:-
+================
+->install Role-based Authorization Strategy Version3.2.0 plugin:-
+-----------------------------------
+steps:-
+----------
+1)Go to Manage Jenkins, select Manage Plugins.
+2) search for availability plugins as a Role-based Authorization Strategy Version3.2.0
+3) install without restart.
+
+-> create role:-
+----------------
+steps:-
+-------
+1) Again go to Manage Jenkins
+2) Go to security Block 
+3) select Manage and Assign Roles
+4) Inside Manage and Assign Roles two sections are available. they are
+ 	a)Manage Roles
+	b)Assign Roles
+5) First select the "Manage Roles" 
+6) Inside Manage Role Choose the "Role to add" Blank and give the role Name. Later Click the Add Button which has Shown in the below of
+  the Blank.
+7)After select the Click the "Assign Roles"
+8)There are shown "Global roles". In that, The roles are shown in column wise which are created in "Manages Role" Section.
+9)Now you Have to choose the "User/group to add" Blank and give the name Of the User which You have created in "Manage Users" section.
+10)Later click on add button which is placed in below of the blank.The User Name is autometically added onto the "GlobalRoles"
+   That is placed at the top of the "Assigned Roles" Section.
+10)Finally you have to click the check boxes in "Global Roles" section what role you want to attach to that user.
