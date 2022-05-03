@@ -1,0 +1,1 @@
+sed s/number/$BUILD_NUMBER/g k8s/deployment.yml

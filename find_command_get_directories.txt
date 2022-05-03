@@ -1,0 +1,3 @@
+#to find last five days directories:-
+----------------------------
+cmd:-find . -type d -ctime +5

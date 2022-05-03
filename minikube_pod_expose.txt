@@ -1,0 +1,8 @@
+kubectl create deployment second --image=saikrish12345/php_repo1:1
+kubectl expose deployment second --type=LoadBalancer --port=3000
+minikube tunnel
+
+
+ingress-controller for minikube:-
+-----------------------------------
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-0.31.1/deploy/static/provider/baremetal/deploy.yaml

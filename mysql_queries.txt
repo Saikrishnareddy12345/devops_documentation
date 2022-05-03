@@ -1,0 +1,6 @@
+1)finding the users in mysql:
+select user, host from mysql.user;
+-------------------------------
+2)create database:-
+create batabase db_name;
+------------------------------

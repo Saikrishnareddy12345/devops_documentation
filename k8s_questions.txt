@@ -1,0 +1,24 @@
+1)service discovery in k8s?
+2)how to connect one pod to another pod ?
+3)kubernetes objects:
+A)	a)Deployment Objects:
+	  pods
+	  Namespaces
+	  ReplicationController (Manages Pods)
+	  DeploymentController (Manages Pods)
+	  StatefulSets
+	  DaemonSets
+	b)network Objects:
+	  ingress
+	  Service:
+		clusterIp
+		NodePort
+		LoadBalancer
+	c)Environment Objects:
+	  Secret
+	  ConfigMaps
+	d)Storage Objects:
+	  Volumes:
+		Persistent Volume
+		Persistent Volume Claim
+	

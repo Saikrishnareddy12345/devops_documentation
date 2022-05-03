@@ -1,0 +1,9 @@
+step:1
+- create website =index.html
+step:2
+	2 sections:-
+	1)first.html
+	2)second.html
+step:3 
+- put index.html is in one ec2
+- put the 2 sections are in another ec2.

@@ -1,0 +1,38 @@
+Install helm:-
+================================
+curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+chmod 700 get_helm.sh
+./get_helm.sh
+--------------------------------------------------------------------------------------------------------------------------
+
+Install prometheus in Kubernetes
+=================================
+1)add the helm repo first:-
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+2)download prometheus:-
+kubectl create namespace prometheus
+
+helm install prometheus prometheus-community/prometheus \
+    --namespace prometheus \
+    --set alertmanager.persistentVolume.storageClass="gp2" \
+    --set server.persistentVolume.storageClass="gp2"
+-------------------------------------------------------------------------------------------------------------------------
+Install grafana in Kubernetes:-
+=================================
+1)add the helm repo:-
+helm repo add grafana https://grafana.github.io/helm-charts
+2)write the ymal file to set up the connection between prometheus and grafana:-
+mkdir -p ${HOME}/environment/grafana
+cat << EoF > ${HOME}/environment/grafana/grafana.yaml
+datasources:
+  datasources.yaml:
+    apiVersion: 1
+    datasources:
+    - name: Prometheus
+      type: prometheus
+      url: http://prometheus-server.prometheus.svc.cluster.local
+      access: proxy
+      isDefault: true
+EoF
+---------------------------------------------------------------------------------------------------------------------------
+
