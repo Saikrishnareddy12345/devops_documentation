@@ -1,5 +1,6 @@
 jenkins setup:-
 -------------------
+#####Jenkins Version=2.332.3 ########
 sudo wget -O /etc/yum.repos.d/jenkins.repo     https://pkg.jenkins.io/redhat-stable/jenkins.repo
 sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
 yum repolist
@@ -16,5 +17,19 @@ change port number:
 -------------------
 sudo vim /etc/sysconfig/jenkins
 systemctl restart jenkins
+
+###########Jenkins Version=2.346  ###########
+sudo yum -y update -y
+sudo amazon-linux-extras install java-openjdk11 -y
+sudo tee /etc/yum.repos.d/jenkins.repo<<EOF
+[jenkins]
+name=Jenkins
+baseurl=http://pkg.jenkins.io/redhat
+gpgcheck=0
+EOF
+sudo rpm --import https://jenkins-ci.org/redhat/jenkins-ci.org.key
+sudo yum install jenkins -y
+systemctl enable jenkins
+systemctl start jenkins
 
 
